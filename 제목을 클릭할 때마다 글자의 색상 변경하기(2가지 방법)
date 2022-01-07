@@ -1,0 +1,63 @@
+- .classList: element가 가지는 class들을 나열한다
+- .classList.contains(): class list에 해당 class가 있는 지 확인한다
+- .classList.add(): class를 추가한다
+- .classList.remove(): class를 삭제한다
+- .classList.toggle(): token이 class list에 있으면 삭제하고, 없으면 추가한다
+
+  // HTML
+ 
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale="1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Momentum</title>
+  </head>
+  <body>
+    <div class="hello">
+      <h1 id="title">Grab me!</h1>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
+
+  // CSS
+
+h1{
+  color: blue;
+  transition: color 0.5s ease-in-out;
+}
+.active{
+  color: tomato;
+}
+
+  // JavaScript (1)
+
+const title = document.querySelector(".hello h1");
+
+function handleTitleClick(){
+  const activeClass = "active"; // 추가하고자 하는 class 이름을 변수에 저장하여 발생할 수 있는 에러를 축소
+  
+  if(title.classList.contains(activeClass)){  // title이 active class를 가지는 지 확인
+    title.classList.remove(activeClass);  // 있다면 active class를 삭제
+  } else{
+    title.classList.add(activeClass); // 없다면 active class를 추가
+  }
+}
+
+title.addEventListener("click", handleTitleClick);  // click 이벤트 발생 시, handleTitleclick() 실행
+
+  // JavaScript (2)
+
+const title = document.querySelector(".hello h1");
+
+function handleTitleClick(){
+  title.classList.toggle("active"); // title이 active class를 가지고 있으면 삭제, 가지고 있지 않다면 추가
+}
+
+title.addEventListener("click", handleTitleClick);  // click 이벤트 발생 시, handleTitleclick() 실행
+
+
+// toggle()을 이용하면 더 간소하고 효율적인 코드를 짤 수 있다. 완뵥해!
