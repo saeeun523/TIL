@@ -1,0 +1,45 @@
+사용자가 username을 입력할 때, 15자를 초과하지 않도록 글자 수에 제한을 두자
+
+// HTML
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="login.css">
+        <title>Momentum App</title>
+    </head>
+    <body>
+        <form id="login-form">
+            <input type="text" placeholder="What is your name?" />
+            <button>Log In</button>
+        </form>
+        <script src="login.js"></script>
+    </body>
+</html>
+
+
+// CSS
+
+const loginForm = document.getElementById("login-form");
+  // login form 가져오기
+
+const loginForm = loginForm.querySelector("input");
+  // login form의 input 가져오기
+const loginForm = loginForm.querySelector("button");
+  // login form의 button 가져오기
+
+function onLoginBtnClick(){
+  const username = loginInput.value;
+    // 사용자가 입력한 내용을 username에 저장
+  if(username === ""){
+    alert("please write your name");
+      // 입력한 내용이 없으면 메세지 창 띄우기
+  } else(username.length > 15){
+    alert("Your name is too long");
+      // 입력한 글자의 수가 15자 이상이면 메세지 창 띄우기
+  }
+}
+
+loginButton.addEventListener("click", onLoginBtnClick);
