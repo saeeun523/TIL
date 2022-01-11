@@ -1,6 +1,6 @@
 javascript를 이용해 아래 login form의 element를 가져와보자!
 
-  // HTML
+// HTML
 
 <!DOCTYPE html>
 <html>
@@ -19,12 +19,12 @@ javascript를 이용해 아래 login form의 element를 가져와보자!
   </body>
 </html>
 
-  // JavaScript
+// JavaScript
 
 const loginForm = document.getElementById("login-form");
 
-// (1) document에서 element를 가져오는 방법
 const loginInput = document.querySelector("#login-form input");
+  // document의 element를 가져오는 방법 (1)
 
-// (2) login form에서 element를 가져오는 방법
 const loginButton = loginForm.querySelector("button");
+  // login form의 element를 가져오는 방법 (2)
