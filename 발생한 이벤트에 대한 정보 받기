@@ -1,6 +1,4 @@
-+ 링크의 기본 동작은 '다른 페이지로 이동' 이다
-
-[ 발생한 이벤트에 대한 정보를 JavsScript로부터 받아보자 ]
+[ javascript에게 발생한 이벤트에 대한 정보를 받아보자 ]
 
 이벤트 발생 시 실행한 함수를 정의할 때, javascript는 첫번째 인자를 통해 이벤트에 대한 여러가지 정보를 제공한다
 
@@ -14,3 +12,63 @@ function handleLinkClick(event){ // 첫 번째 argument로 'event'라는 object�
 }
 
 link.addEventListener("click", handleLinkClick); // 링크를 클릭할 때마다 handleLinkClick 함수 실행
+
+=====
+결과:
+PointerEvent {isTrusted: true, pointerId: 0, width: 1, height: 1, pressure: 0, …}
+  isTrusted: true
+  altKey: false
+  altitudeAngle: 1.5707963267948966
+  azimuthAngle: 0
+  bubbles: true
+  button: 0
+  buttons: 0
+  cancelBubble: false
+  cancelable: true
+  clientX: 69
+  clientY: 19
+  composed: true
+  ctrlKey: false
+  currentTarget: null
+  defaultPrevented: true
+  detail: 1
+  eventPhase: 0
+  fromElement: null
+  height: 1
+  isPrimary: false
+  layerX: 69
+  layerY: 19
+  metaKey: false
+  movementX: 0
+  movementY: 0
+  offsetX: 61
+  offsetY: 11
+  pageX: 69
+  pageY: 19
+  path: (5) [a, body, html, document, Window]
+  pointerId: 0
+  pointerType: "touch"
+  pressure: 0
+  relatedTarget: null
+  returnValue: false
+  screenX: 95
+  screenY: 253
+  shiftKey: false
+  sourceCapabilities: InputDeviceCapabilities {firesTouchEvents: true}
+  srcElement: a
+  tangentialPressure: 0
+  target: a
+  tiltX: 0
+  tiltY: 0
+  timeStamp: 1427.800000000745
+  toElement: null
+  twist: 0
+  type: "click"
+  view: Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+  which: 1
+  width: 1
+  x: 69
+  y: 19
+  [[Prototype]]: PointerEvent
+
+완뵥해!
