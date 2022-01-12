@@ -1,0 +1,16 @@
+[ submit event의 기본 동작인 새로고침을 방지해보자 ]
+
+// JavaScript
+
+const loginForm = document.getElementById("login-form");
+const loginInput = loginForm.querySelector("input");
+
+function onLoginSubmit(event){
+  event.preventDefault(); // 브라우저가 기본 동작을 실행하지 못하도록 방지
+  console.log(loginInput.value);
+}
+
+loginForm.addEventListener("submit", onLoginSubmit); // submit 이벤트가 발생하면 새로고침이 기본으로 동작
+
+=====
+submit 이벤트 발생 시 새로고침 되지 않고 loginInput의 값만 콘솔 창에 입력된다. 완뵥해!
