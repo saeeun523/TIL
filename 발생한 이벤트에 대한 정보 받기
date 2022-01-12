@@ -51,8 +51,8 @@ PointerEvent {isTrusted: true, pointerId: 0, width: 1, height: 1, pressure: 0, �
   pressure: 0
   relatedTarget: null
   returnValue: false
-  screenX: 95
-  screenY: 253
+  screenX: 95 // 클릭한 위치의 X 좌표
+  screenY: 253 // 클릭한 위치의 Y 좌표
   shiftKey: false
   sourceCapabilities: InputDeviceCapabilities {firesTouchEvents: true}
   srcElement: a
