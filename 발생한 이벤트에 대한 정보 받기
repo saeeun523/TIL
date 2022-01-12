@@ -1,0 +1,16 @@
++ 링크의 기본 동작은 '다른 페이지로 이동' 이다
+
+[ 발생한 이벤트에 대한 정보를 JavsScript로부터 받아보자 ]
+
+이벤트 발생 시 실행한 함수를 정의할 때, javascript는 첫번째 인자를 통해 이벤트에 대한 여러가지 정보를 제공한다
+
+// JavaScript
+
+const link = document.getElementById("a");
+
+function handleLinkClick(event){ // 첫 번째 argument로 'event'라는 object를 주어 이벤트 정보를 제공 받을 공간을 마련
+  event.preventDefault(); // 다른 페이지로 이동하는 것을 방지
+  console.log(event); // javascript로부터 받은 이벤트 정보를 콘솔 창에 입력
+}
+
+link.addEventListener("click", handleLinkClick); // 링크를 클릭할 때마다 handleLinkClick 함수 실행
