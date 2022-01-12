@@ -71,4 +71,4 @@ PointerEvent {isTrusted: true, pointerId: 0, width: 1, height: 1, pressure: 0, �
   y: 19
   [[Prototype]]: PointerEvent
 
-완뵥해!
+이벤트로부터 얻을 수 있는 정보가 아주 다양하다. 완뵥해!
