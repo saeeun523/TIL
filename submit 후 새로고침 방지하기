@@ -14,3 +14,5 @@ loginForm.addEventListener("submit", onLoginSubmit); // submit 이벤트가 발�
 
 =====
 submit 이벤트 발생 시 새로고침 되지 않고 loginInput의 값만 콘솔 창에 입력된다. 완뵥해!
+
++ form의 기본 동작은 submit 이다!
