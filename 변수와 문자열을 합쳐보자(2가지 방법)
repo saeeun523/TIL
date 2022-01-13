@@ -1,0 +1,14 @@
+[ 사용자의 변수와 문자열을 합쳐서 새로운 변수에 저장해보자 (1) ]
+
+// JavaScript
+const username = document.querySelector("#input"); // input에서 입력받은 사용자 이름 저장
+const greeting = "Hello! " + username; // 쌍따옴표와 '+'를 사용
+
+[ 변수와 문자열을 합쳐서 새로운 변수에 저장해보자 (2) ]
+
+// JavaScript
+const username = document.querySelector("#input");
+const greeting = `Hello! ${username}`; // 백틱과 ${}를 사용
+
+=====
+nico쌤은 (2)가 더 편하다고 한다. 완뵥해!
