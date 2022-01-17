@@ -1,0 +1,61 @@
+[사용자의 이름을 입력받은 후, 로컬 저장소에 정보를 저장하여 인사해보자!]
+
+// HTML
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <form id="login-form" class="hidden">
+      <input type="text" placeholder="Please Write Your Name" />
+      <button type="submit">Login</button>
+    </form>
+    <h1 id="greeting">Who are you?</h1>
+
+    <script src="src/index.js"></script>
+  </body>
+</html>
+
+// CSS
+
+body {
+    font-family: sans-serif;
+  }
+  
+  .hidden {
+    display: none;
+  }
+
+// JavaScript
+
+const loginForm = document.querySelector("#login-form");
+const loginInput = loginForm.querySelector("input");
+const loginButton = loginForm.querySelector("button");
+const greeting = document.querySelector("#greeting");
+
+const HIDDEN_CLASSNAME = "hidden";
+const USERNAME_KEY = "username";
+
+function onLoginSubmit(event) {
+  event.preventDefault();
+  loginForm.classList.add(HIDDEN_CLASSNAME);
+  const username = loginInput.value;
+  localStorage.setItem(USERNAME_KEY, username);
+  paintGreetings(username);
+}
+function paintGreetings(username) {
+  greeting.innerText = `Hello ${username}!`;
+}
+
+const savedUsername = localStorage.getItem(USERNAME_KEY);
+
+if (savedUsername === null) {
+  loginForm.classList.remove(HIDDEN_CLASSNAME);
+  loginForm.addEventListener("submit", onLoginSubmit);
+} else {
+  paintGreetings(savedUsername);
+}
