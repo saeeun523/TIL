@@ -1,0 +1,71 @@
+[사용자에게 입력받은 정보를 로컬 저장소에 저장/읽어오기/삭제 해보자 ]
+
++ 자주 사용되는 정보를 로컬 저장소에 저장하여 javascript없이 브라우저의 기본 기능으로 동작을 구현할 수 있다 
+
+1. localStorage.setItem(key, value)
+: 로컬 저장소에 정보를 저장한다
+
+예)
+localStorage.setItem("username", "saeeun");
+
+2. localStorage.getItem(key, value);
+: 로컬 저장소에 저장된 정보를 읽어들인다. key를 인자로 주면 그에 대응하는 value를 읽어온다
+
+예)
+localStorage.getItem("username"); // "saeeun"
+
+3. localStorage.removeItem(key);
+: 로컬 저장소에 저장된 정보를 삭제한다
+
+예)
+localStorage.removeItem("username");
+
+=====
+[예제: 입력받은 정보를 로컬 저장소에 저장한 후 인삿말을 띄어보자 ]
+
+// HTML
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <form id="login-form" class="hidden">
+      <input type="text" placeholder="Please Write Your Name" />
+    </form>
+    <h1 id="greeting"></h1>
+
+    <script src="src/index.js"></script>
+  </body>
+</html>
+
+// JavaScript
+const loginForm = document.querySelector("#login-form");
+const loginInput = loginForm.querySelector("input");
+const greeting = document.querySelector("#greeting");
+
+const USERNAME_KEY = "username";  // 자주 쓰이는 문자열은 오류 방지를 위해 대문자로 이름 지어진 상수로 저장
+
+function onLoginSubmit(event) {
+  event.preventDefault(); // 이벤트 발생 시 새로고침 방지
+  const username = loginInput.value;  // 입력받은 정보를 변수에 저장
+  localStorage.setItem(USERNAME_KEY, username); // 입력받은 정보를 로컬 저장소에 저장
+  paintGreetings(username); // 인삿말 띄우기
+}
+function paintGreetings(username) {
+  greeting.innerText = `Hello ${username}!`;  // 로컬 저장소에 저장된 이름을 활용한 인삿말 띄우기
+}
+
+const savedUsername = localStorage.getItem(USERNAME_KEY); // 로컬 저장소에 저장된 정보 읽어오기
+
+if (savedUsername === null) { // 로컬 저장소에 저장된 정보가 없다면,
+  loginForm.addEventListener("submit", onLoginSubmit);  // 사용자에게 정보를 입력받아 인삿말을 띄우는 onLoginSubmit 실행
+} else {
+  paintGreetings(savedUsername);  // 이미 로컬 저장소에 저장된 정보가 있다면, 새로 입력받지 않고 바로 paintGreeting을 실행하여 인삿말을 띄우기
+}
+
+=====
+javascript로 구현해도 되지만 브라우저의 기본 기능을 최대한 활용하는 것이 좋다. 완뵥해!
