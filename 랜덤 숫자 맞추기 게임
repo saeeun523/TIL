@@ -1,0 +1,75 @@
+// HTML
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+
+  <body>
+    <h1>Random Number Game</h1>
+    <form id="play-form">
+      <h2>You should guess a number between 0 and</h2>
+      <input id="max-number" type="number" /><br />
+      <span>choose a number: </span>
+      <input id="guess-number" type="number" />
+      <button id="play-button" type="submit">play!</button>
+    </form>
+    <span id="compare-number"></span><br />
+    <span id="game-result"></span>
+    <script src="src/index.js"></script>
+  </body>
+</html>
+
+// JavaScript
+
+const maxNumber = document.querySelector("#max-number");
+const guessNumber = document.querySelector("#guess-number");
+const playButton = document.querySelector("#play-button");
+const compareNumber = document.querySelector("#compare-number");
+const gameResult = document.querySelector("#game-result");
+
+function playGame(maxNumber, guessNumber) {
+  const randomNumber = Math.floor(Math.random() * (maxNumber + 1));
+  compareNumber.innerText = `You choose: ${guessNumber} and the random number is: ${randomNumber}`;
+  if (randomNumber === guessNumber) {
+    gameResult.innerText = "You Win!";
+  } else {
+    gameResult.innerText = "You loose!";
+  }
+}
+
+function onPlayBtnClick(event) {
+  event.preventDefault();
+  const maxNumInt = parseInt(maxNumber.value);
+  const guessNumInt = parseInt(guessNumber.value);
+  if (maxNumber.value === "" || maxNumInt < 0) {
+    alert("0 이상의 랜덤 숫자 범위를 지정하세요");
+  } else if (guessNumber.value === "" || guessNumInt > maxNumInt) {
+    alert(`${maxNumInt} 이하의 숫자를 선택하세요`);
+  } else {
+    playGame(maxNumInt, guessNumInt);
+  }
+}
+playButton.addEventListener("click", onPlayBtnClick);
+
+// CSS
+
+body {
+  font-family: sans-serif;
+}
+h2 {
+  display: inline;
+}
+input {
+  display: inline-block;
+}
+span {
+  display: inline-block;
+  margin: 10px 0;
+}
+#game-result {
+  font-weight: bold;
+}
