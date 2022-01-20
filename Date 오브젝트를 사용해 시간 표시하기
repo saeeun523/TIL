@@ -1,0 +1,42 @@
+[ Date 오브젝트에 들어있는 여러 함수들을 살펴보자 ]
+
+=====
++ Date.getDate(): 오늘의 일자를 출력한다
++ Date.getDay(): 오늘의 요일을 출력한다. 일요일부터 토요일까지 0~6의 숫자로 표현한다
++ Date.getFullYear(): 오늘의 연도를 출력한다
++ Date.getHours(): 현재 시를 출력한다
++ Date.getMinutes(): 현재 분을 출력한다
++ Date.getSeconds(): 현재 초를 출력한다
+
+=====
+[예제: 일정한 시간 간격으로 시간을 출력해보자 ]
+
+// HTML
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+
+  <body>
+    <h2 id="clock">
+      00:00:00
+    </h2>
+
+    <script src="src/index.js"></script>
+  </body>
+</html>
+
+// JavaScript
+
+const clock = document.querySelector("#clock");
+
+function getClock() {
+  const date = new Date();  // Date 오브젝트 선언
+  clock.innerText = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`; // 시, 분, 초를 표시
+}
+
+setInterval(getClock, 1000);  // 1초마다 함수 실행
