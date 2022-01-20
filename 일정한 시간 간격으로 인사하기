@@ -1,0 +1,35 @@
+[ setInterval() 함수를 이용하여 일정한 시간 간격으로 인사해보자! ]
+
+=====
+setInterval()
+: 첫번째 인자에는 실행할 함수명을, 두번째 인자에는 함수가 호출되는 시간 간격(ms, milliseconds)을 지정한다
+
+=====
+[예제: 5초 간격으로 인사를 출력해보자 ]
+
+// HTML
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+
+  <body>
+    <h2 id="clock">
+      00:00
+    </h2>
+
+    <script src="src/index.js"></script>
+  </body>
+</html>
+
+// JavaScript
+
+function sayHello(){
+  console.log("Hello!");
+}
+
+setInterval(sayHello, 5000);
