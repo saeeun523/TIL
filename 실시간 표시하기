@@ -1,0 +1,61 @@
+[ Date 오브젝트와 padStart()로 실시간을 표시해보자 ]
+
+=====
++ Date.getDate(): 오늘의 일자를 출력한다
++ Date.getDay(): 오늘의 요일을 출력한다. 일요일부터 토요일까지 0~6의 숫자로 표현한다
++ Date.getFullYear(): 오늘의 연도를 출력한다
++ Date.getHours(): 현재 시를 출력한다
++ Date.getMinutes(): 현재 분을 출력한다
++ Date.getSeconds(): 현재 초를 출력한다
++ 
+1. padStart(arg1, arg2)
+: arg1으로 지정한 자릿수가 충족되지 않으면, arg2로 지정한 문자를 문자열 앞에 붙여 패딩을 준다. 단, string에만 적용된다
+
+예시)
+"1".padStart(3, "0"); >> "001"
+
+"12".padStart(2, "0"); >> "12"  // 문자열이 이미 자릿수를 만족하므로 패딩을 주지 않는다
+
+2. padEnd(arg1, arg2)
+: padStart()와 같은 역할을 하며, 문자열 뒤에 패딩을 준다
+
+예시)
+"hello".padEnd(10, "x"); >> "helloxxxxx"
+
+
+=====
+[예제: 일정한 시간 간격으로 시간을 출력해보자 ]
+
+// HTML
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+
+  <body>
+    <h2 id="clock">
+      00:00:00
+    </h2>
+
+    <script src="src/index.js"></script>
+  </body>
+</html>
+
+// JavaScript
+
+const clock = document.querySelector("#clock");
+
+function getClock() {
+  const date = new Date();
+  const hours = String(date.getHours()).padStart(2, "0"); // 시를 두 자릿수로 나타내도록 지정
+  const minutes = String(date.getMinutes()).padStart(2, "0"); // 분을 두 자릿수로 나타내도록 지정
+  const seconds = String(date.getSeconds()).padStart(2, "0"); // 초를 두 자릿수로 나타내도록 지정
+  clock.innerText = `${hours}:${minutes}:${seconds}`;
+}
+
+getClock(); // 1초 지연 없이 바로 시간을 나타내도록 함수 실행
+setInterval(getClock, 1000);  // 1초마다 실시간 출력
