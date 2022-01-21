@@ -1,12 +1,13 @@
 [ Date 오브젝트와 padStart()로 실시간을 표시해보자 ]
 
 =====
-+ Date.getDate(): 오늘의 일자를 출력한다
-+ Date.getDay(): 오늘의 요일을 출력한다. 일요일부터 토요일까지 0~6의 숫자로 표현한다
-+ Date.getFullYear(): 오늘의 연도를 출력한다
-+ Date.getHours(): 현재 시를 출력한다
-+ Date.getMinutes(): 현재 분을 출력한다
-+ Date.getSeconds(): 현재 초를 출력한다
++ Date: 호출하는 당시의 날짜와 시간을 알려준다
++ Date.getDate(): 호출하는 당시의 일자를 출력한다
++ Date.getDay(): 호출하는 당시의 요일을 출력한다. 일요일부터 토요일까지 0~6의 숫자로 표현한다
++ Date.getFullYear(): 호출하는 당시의 연도를 출력한다
++ Date.getHours(): 호출하는 당시의 시를 출력한다
++ Date.getMinutes(): 호출하는 당시의 분을 출력한다
++ Date.getSeconds(): 호출하는 당시의 초를 출력한다
 + 
 1. padStart(arg1, arg2)
 : arg1으로 지정한 자릿수가 충족되지 않으면, arg2로 지정한 문자를 문자열 앞에 붙여 패딩을 준다. 단, string에만 적용된다
