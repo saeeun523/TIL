@@ -1,0 +1,24 @@
+[ setInterval()과 setTimeout()의 차이를 알아보자 ]
+
+=====
++ setInterval()
+: 일정한 시간 간격으로 함수를 호출한다. 시간 간격은 milliseconds 단위로 생성한다
+
+예시)
+function sayHello(){
+  console.log("HELLO!");
+}
+
+setInterval(sayHello, 5000);
+// 5초마다 "HELLO!"가 콘솔창에 출력된다
+
++ setTimeout()
+: 생성한 타이머가 만료되면 함수를 호출한다. 타이머는 milliseconds 단위로 생성하며, 시간을 생략하거나 "0"으로 지정할 경우 즉시 함수를 실행할 수 있다.
+
+예시)
+function sayHello(){
+  console.log("HELLO!");
+}
+
+setTimeout(sayHello, 5000);
+// 5초 뒤 "HELLO!"가 콘솔창에 출력된다
