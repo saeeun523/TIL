@@ -11,7 +11,7 @@
   </head>
   <body>
     <form id="login-form" class="hidden">
-      <input type="text" placeholder="Please Write Your Name" />
+      <input required maxlength="15" type="text" placeholder="Please Write Your Name" />  // 최대 15글자까지 입력하도록 설정
       <button type="submit">Login</button>
     </form>
     <h1 id="greeting">Who are you?</h1>
