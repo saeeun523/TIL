@@ -59,3 +59,28 @@ age.classList.contains("cccc"); >> false
 + classList.remove()
 : 클래스를 삭제한다
 
+예시)
+const age = document.querySelector("#age");
+if(age.classList.contains("cccc")){ // 'age'에 'cccc'라는 클래스가 있는지 확인
+  age.classList.remove("cccc"); // 'cccc'가 있으면 해당 클래스를 삭제
+} else if{
+  age.classList.add("cccc");  // 'cccc'가 없으면 해당 클래스를 추가
+}
+
+8. toggle()
+: 요소를 표시 또는 숨김 처리하는 함수
+
+예시)
+const age = document.querySelector("#age");
+age.classList.toggle("cccc"); // 'age'에 'cccc'라는 클래스가 존재하면 삭제 처리하고, 존재하지 않으면 추가한다
+
+8. addEventListener()
+: 이벤트 타겟으로부터 발생한 이벤트를 처리하는 핸들러를 추가한다.
+
+예시)
+const button = document.querySelector("#submit"); // html에서 element를 가져와 변수에 저장
+function sayHello(){  // 지정한 이벤트 발생 시 실행할 함수 정의
+  console.log("Hello!");
+}
+button.addEventListener("click", sayHello()); // 'button'을 클릭하면 'sayHello'라는 함수 실행
+
