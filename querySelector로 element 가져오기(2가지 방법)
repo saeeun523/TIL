@@ -1,5 +1,21 @@
 javascript를 이용해 아래 login form의 element를 가져와보자!
 
+=====
+1. getElementById()
+: 객체의 id를 이용하여 가져온다
+
+2. getElementByClassName()
+: 객체의 클래스를 이용하여 가져온다
+
+3. querySelector()
+: 객체를 css 방식으로 지정하여 가져온다. 여러 개의 엘리먼트들이 해당될 경우, 맨 첫 번째의 객체만 가져온다
+
+예시)
+const h1 = document.querySelector("div.hello:first-child h1");  // 'hello' 클래스를 가지는 'div' 엘리먼트의 첫 번째 자식 엘리먼트에 속하는 'h1' 객체
+
+4. querySelectorAll()
+: 객체를 css 방식으로 지정하여 가져오며, 해당되는 모든 엘리먼트들을 가져온다
+
 // HTML
 
 <!DOCTYPE html>
@@ -21,11 +37,6 @@ javascript를 이용해 아래 login form의 element를 가져와보자!
 
 // JavaScript
 
-const loginForm = document.getElementById("login-form");
-  // document의 element를 가져오는 방법 (1): id로 가져올 element 지정
-
-const loginInput = document.querySelector("#login-form input");
-  // document의 element를 가져오는 방법 (2-1): css 방식으로 가져올 element 지정
-
-const loginButton = loginForm.querySelector("button");
-  // login form의 element를 가져오는 방법 (2-2)
+const loginForm = document.getElementById("login-form");  // 'login-form'이라는 id를 가진 객체 가져오기
+const loginInput = document.querySelector("#login-form input"); // id가 'login-form'인 객체 내 인풋 엘리먼트 가져오기
+const loginButton = loginForm.querySelector("button");  // 'loginForm'에 속한 객체 중 버튼 엘리먼트 가져오기
