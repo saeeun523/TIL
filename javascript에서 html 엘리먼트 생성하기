@@ -1,0 +1,15 @@
+javascript에서 html 엘리먼트를 생성해보자
+
+=====
+1. createElement()
+: javascript에서 문서 요소를 만들어 html에 추가해준다
+  'querySelector()', 'getElementById()' 등이 html 요소를 javascript로 가져오는 거라면, 'createElement()'는 javascript에서 기존에 없던 html 요소를 생성한다.
+  
+2. appendChild()
+: html 부모 객체에 자식 객체를 생성하거나, 다른 부모 객체로 자식 객체를 이동시킨다
+  부모 객체.appendChild(자식 객체)
+
+예시)
+const newImage = document.createElement("img"); // 'img' 엘리먼트 생성
+document.body.appendChild(newImage);  // 문서 내 'body' 객체 안에 생성한 요소를 추가
+newImage.src = `image/bgimg.jpg`; // 생성한 엘리먼트의 속성 또한 javascript에서 지정 가능
