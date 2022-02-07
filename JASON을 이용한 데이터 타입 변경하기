@@ -11,9 +11,10 @@ console.log(JASON.stringfy(number)); >> "12"
 2. JASON.parse()
 : 문자열을 분석해 알맞은 객체 혹은 값을 생성한다
 
-예)
+예 1)
 const stringToNumber = "34";
 console.log(JASON.parse(stringToNumber)); >> 34
 
+예 2)
 const stringToArray = "[a, b, c]";
 console.log(JASON.parse(stringToArray)); >> [a, b, c]
